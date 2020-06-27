@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #For phonenumber fields/models/etc.
+    'phonenumber_field',
+    #For Forms
+    'crispy_forms',
     #Developed APP_DIRS
     'Form',
 ]
@@ -70,6 +74,9 @@ TEMPLATES = [
         },
     },
 ]
+
+#Set the Template pack for Django Crispy forms
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 WSGI_APPLICATION = 'LandingPage.wsgi.application'
 

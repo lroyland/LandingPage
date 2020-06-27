@@ -1,9 +1,8 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
-# Create your models here.
-
-class newLead(models.Model):
+class Lead(models.Model):
     first_name = models.CharField(max_length = 250)
     last_name = models.CharField(max_length = 250)
-    email = models.CharField(max_length = 250)
-    phone_number = models.CharField(max_length = 100)
+    email = models.EmailField(max_length = 254)
+    phone_number = PhoneNumberField()
