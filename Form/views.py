@@ -27,7 +27,7 @@ class LeadListView(ListView):
 
 class LeadCreateView(CreateView):
     model = Lead
-    fields = ('first_name', 'last_name', 'email', 'phone_number','date')
+    fields = ('first_name', 'last_name', 'email', 'phone_number')
     success_url = reverse_lazy('lead_list')
 
 

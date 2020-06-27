@@ -6,4 +6,4 @@ class Lead(models.Model):
     last_name = models.CharField(max_length = 250)
     email = models.EmailField(max_length = 254)
     phone_number = PhoneNumberField()
-    date = models.DateTimeField(auto_now_add=True)
+    #date = models.DateTimeField(auto_now_add=True)
