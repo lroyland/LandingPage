@@ -1,16 +1,18 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from django.utils import timezone
 
-class TimeStampMixin(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
-
-class Lead(TimeStampMixin):
+class Lead(models.Model):
     first_name = models.CharField(max_length = 250)
     last_name = models.CharField(max_length = 250)
     email = models.EmailField(max_length = 254)
     phone_number = PhoneNumberField()
-    #date = models.DateTimeField(auto_now_add=True)
+    created     = models.DateTimeField(editable=False)
+    modified    = models.DateTimeField()
+
+    def save(self, *args, **kwargs):
+        ''' On save, update timestamps '''
+        if not self.id:
+            self.created = timezone.now()
+        self.modified = timezone.now()
+        return super(Lead, self).save(*args, **kwargs)
