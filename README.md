@@ -19,4 +19,16 @@ Note: (.env) should show up before your terminal prompt
 `pip install -r requirements.txt`
 
 ### See if it gets up and running
-`python3 manage.py runserver`
+`python manage.py runserver`
+
+### Setup migrations
+`python manage.py makemigrations Form`
+
+### Migrate
+`python manage.py migrate`
+###
+
+### Setup admin
+`python manage.py createsuperuser`
+###
+At this point, `/admin` should function as well
