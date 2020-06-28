@@ -26,7 +26,7 @@ urlpatterns = [
 ]
 """
 
-from django.urls import path
+from django.urls import include, path
 
 from Form.views import LeadListView, LeadCreateView, LeadUpdateView
 
@@ -34,6 +34,7 @@ from django.contrib import admin
 
 
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('admin/', admin.site.urls),
     path('', LeadListView.as_view(), name='lead_list'),
     path('add/', LeadCreateView.as_view(), name='lead_add'),

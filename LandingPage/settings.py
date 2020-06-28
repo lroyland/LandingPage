@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -74,6 +75,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 #Set the Template pack for Django Crispy forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
